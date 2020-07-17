@@ -8,16 +8,25 @@ package com.ict4305group3.genericsmonthproject;
 /**
  *
  * @author ipiesh
+ * @param <T>
  */
 public class Month<T> { 
     
     private T month; 
+
+    public Month() {
+
+	month = null;
+    }
+    
     
     public void add(T month){
         
+	this.month = month;
     }; 
     
     public T get(){
-    
+	
+	return month;
     }  
 }; 
