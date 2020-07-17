@@ -10,22 +10,30 @@ import java.util.HashMap;
 
 /**
  *
- * @author ipiesh
+ * @author Ivan Piesh
+ * @author Sara Sobczyk
+ * @author Dawn Touriac
+ * @author Kevin Taylor
  */
+
 public class MonthApp {
     public static void main(String[] args) {
-        // define
+
+        // create month objects for index and value
         Month<Integer> monthIndex = new Month<>();
         Month<String> monthName = new Month<>();
+
+	// create array objects for storing indices and values
 	ArrayList<Integer> monthIndexArray = new ArrayList<>();
 	ArrayList<String> monthNameArray = new ArrayList<>();
-        // adding values
-        
+
+        // add values to index array monthIndexArray
 	for (int i = 1; i < 13; i++) {
 	    monthIndex.add(i);
 	    monthIndexArray.add(monthIndex.get());
 	}
 
+	// add values to value array monthNameArray
         monthName.add("January");
 	monthNameArray.add(monthName.get());
 
@@ -62,11 +70,13 @@ public class MonthApp {
 	monthName.add("December");
 	monthNameArray.add(monthName.get());
 	
+	// Create a HashMap object called monthMap
 	HashMap<Integer, String> monthMap = new HashMap<>();
 	for (int i = 0; i < 12; i++) {
 	    monthMap.put(monthIndexArray.get(i), monthNameArray.get(i));
-
 	}
+
+	// print keys and values
 	for (Integer i : monthMap.keySet()) {
 	    System.out.println( i + " = " + monthMap.get(i));
 	}
