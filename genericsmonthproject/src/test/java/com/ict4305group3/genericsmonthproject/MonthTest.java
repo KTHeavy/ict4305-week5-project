@@ -9,19 +9,28 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- *
- * @author ipiesh
+ * @author Ivan Piesh
+ * @author Sara Sobczyk
+ * @author Dawn Touriac
+ * @author Kevin Taylor
  */
 public class MonthTest {
     
-    public MonthTest() {
-    }
+    Month<Integer> monthInt = new Month<>();
+    Month<String> monthString = new Month<>();
 
-    /**
-     * Test of add method, of class Month.
-     */
-    @Test
-    public void testAdd() {
+    public MonthTest() {
+        //Test String Month
+        String expectedMonthStr = "January";
+        monthString.add("January");
+        String actualMonthStr = monthString.get();
+        assertEquals(expectedMonthStr, actualMonthStr);
+        
+        //Test Int Month
+        int expectedMonthInt = 1;
+        monthInt.add(1);
+        int actualMonthInt = monthInt.get();
+        assertEquals(expectedMonthInt, actualMonthInt);
     }
 
     /**
@@ -29,6 +38,6 @@ public class MonthTest {
      */
     @Test
     public void testGet() {
-    }
+}
     
 }
