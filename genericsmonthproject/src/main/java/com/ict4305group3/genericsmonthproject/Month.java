@@ -9,28 +9,28 @@ package com.ict4305group3.genericsmonthproject;
  *
  * @author Ivan Piesh
  * @author Sara Sobczyk
- * @author Dawn Touriac
+ * @author Dawn Tauriac
  * @author Kevin Taylor
  * @param <T>
  */
 
 public class Month<T> { 
     
-    private T month; 
-
-    // create constructor
-    public Month() {
-
-	month = null;
-    }
+    private T month;
     
-    // create method for adding values
+    /**
+     * method for adding month values
+     * @param month
+     */
     public void add(T month){
         
 	this.month = month;
     }; 
     
-    // create method for returning values
+    /**
+     * method for returning month values
+     * @return
+     */
     public T get(){
 	
 	return month;

@@ -6,12 +6,12 @@
 package com.ict4305group3.genericsmonthproject;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Ivan Piesh
  * @author Sara Sobczyk
- * @author Dawn Touriac
+ * @author Dawn Tauriac
  * @author Kevin Taylor
  */
 public class MonthTest {
@@ -19,7 +19,11 @@ public class MonthTest {
     Month<Integer> monthInt = new Month<>();
     Month<String> monthString = new Month<>();
 
-    public MonthTest() {
+    /**
+     * Test of add and get methods, of class Month.
+     */
+    @Test
+    public void testAddAndGet() {
         //Test String Month
         String expectedMonthStr = "January";
         monthString.add("January");
@@ -31,13 +35,5 @@ public class MonthTest {
         monthInt.add(1);
         int actualMonthInt = monthInt.get();
         assertEquals(expectedMonthInt, actualMonthInt);
-    }
-
-    /**
-     * Test of get method, of class Month.
-     */
-    @Test
-    public void testGet() {
-}
-    
+    } 
 }

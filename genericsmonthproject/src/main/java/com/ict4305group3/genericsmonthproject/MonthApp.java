@@ -12,73 +12,93 @@ import java.util.HashMap;
  *
  * @author Ivan Piesh
  * @author Sara Sobczyk
- * @author Dawn Touriac
+ * @author Dawn Tauriac
  * @author Kevin Taylor
  */
-
 public class MonthApp {
+
     public static void main(String[] args) {
 
-        // create month objects for index and value
+        HashMap<Integer, String> monthMap = buildMonthMap();
+
+        // print keys and values
+        for (Integer i : monthMap.keySet()) {
+            System.out.println(i + " = " + monthMap.get(i));
+        }
+    }
+
+    private static ArrayList<Integer> buildMonthIndexList() {
+        // create month object for index
         Month<Integer> monthIndex = new Month<>();
+
+        // create array object for storing month indices
+        ArrayList<Integer> monthIndexList = new ArrayList<>();
+
+        // add values to index array monthIndicies
+        for (int i = 1; i < 13; i++) {
+            monthIndex.add(i);
+            monthIndexList.add(monthIndex.get());
+        }
+        return monthIndexList;
+    }
+
+    private static ArrayList<String> buildMonthNameList() {
+        // create month object for name
         Month<String> monthName = new Month<>();
 
-	// create array objects for storing indices and values
-	ArrayList<Integer> monthIndexArray = new ArrayList<>();
-	ArrayList<String> monthNameArray = new ArrayList<>();
+        // create array object for storing month names
+        ArrayList<String> monthNameList = new ArrayList<>();
 
-        // add values to index array monthIndexArray
-	for (int i = 1; i < 13; i++) {
-	    monthIndex.add(i);
-	    monthIndexArray.add(monthIndex.get());
-	}
-
-	// add values to value array monthNameArray
+        // add values to value array monthNameArray
         monthName.add("January");
-	monthNameArray.add(monthName.get());
+        monthNameList.add(monthName.get());
 
-	monthName.add("February");
-	monthNameArray.add(monthName.get());
+        monthName.add("February");
+        monthNameList.add(monthName.get());
 
-	monthName.add("March");
-	monthNameArray.add(monthName.get());
+        monthName.add("March");
+        monthNameList.add(monthName.get());
 
-	monthName.add("April");
-	monthNameArray.add(monthName.get());
+        monthName.add("April");
+        monthNameList.add(monthName.get());
 
-	monthName.add("May");
-	monthNameArray.add(monthName.get());
+        monthName.add("May");
+        monthNameList.add(monthName.get());
 
-	monthName.add("June");
-	monthNameArray.add(monthName.get());
+        monthName.add("June");
+        monthNameList.add(monthName.get());
 
-	monthName.add("July");
-	monthNameArray.add(monthName.get());
+        monthName.add("July");
+        monthNameList.add(monthName.get());
 
-	monthName.add("August");
-	monthNameArray.add(monthName.get());
+        monthName.add("August");
+        monthNameList.add(monthName.get());
 
-	monthName.add("September");
-	monthNameArray.add(monthName.get());
+        monthName.add("September");
+        monthNameList.add(monthName.get());
 
-	monthName.add("October");
-	monthNameArray.add(monthName.get());
+        monthName.add("October");
+        monthNameList.add(monthName.get());
 
-	monthName.add("November");
-	monthNameArray.add(monthName.get());
+        monthName.add("November");
+        monthNameList.add(monthName.get());
 
-	monthName.add("December");
-	monthNameArray.add(monthName.get());
-	
-	// Create a HashMap object called monthMap
-	HashMap<Integer, String> monthMap = new HashMap<>();
-	for (int i = 0; i < 12; i++) {
-	    monthMap.put(monthIndexArray.get(i), monthNameArray.get(i));
-	}
+        monthName.add("December");
+        monthNameList.add(monthName.get());
 
-	// print keys and values
-	for (Integer i : monthMap.keySet()) {
-	    System.out.println( i + " = " + monthMap.get(i));
-	}
+        return monthNameList;
+    }
+
+    private static HashMap<Integer, String> buildMonthMap() {
+        ArrayList<Integer> monthIndicies = buildMonthIndexList();
+        ArrayList<String> monthNames = buildMonthNameList();
+
+        // Create a HashMap object called monthMap
+        HashMap<Integer, String> monthMap = new HashMap<>();
+        for (int i = 0; i < 12; i++) {
+            monthMap.put(monthIndicies.get(i), monthNames.get(i));
+        }
+
+        return monthMap;
     }
 }
